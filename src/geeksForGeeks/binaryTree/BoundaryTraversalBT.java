@@ -68,8 +68,8 @@ public class BoundaryTraversalBT {
 	            printBoundaryLeft(node.left);
 	  
 	            // Print all leaf nodes
-	            printLeaves(node.left);
-	            printLeaves(node.right);
+	            printLeaves(node);
+	            //printLeaves(node.right);
 	  
 	            // Print the right boundary in bottom-up manner
 	            printBoundaryRight(node.right);

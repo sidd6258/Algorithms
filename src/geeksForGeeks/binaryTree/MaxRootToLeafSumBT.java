@@ -5,27 +5,16 @@ public class MaxRootToLeafSumBT {
 	static int maxSum=0;
 	int maxpathSum(Node node,int sum){
 		
-		if(node == null) return 0;
-		else{
-			
-			sum = sum + node.key;
-			
-			if((node.left == null) && (node.right == null)){
-				if(sum>maxSum){
-					maxSum=sum;
-				}
+		if(node == null) return 0;			
+		sum = sum + node.key;			
+		if((node.left == null) && (node.right == null)){
+			if(sum>maxSum){
+				maxSum=sum;
 			}
-			else{
-				if(node.left != null){
-					maxpathSum(node.left,sum);
-				}
-				if(node.right != null){
-					maxpathSum(node.right,sum);
-				}
-			}
-			return maxSum;
-		}
-						
+		}		
+		maxpathSum(node.left,sum);
+		maxpathSum(node.right,sum);
+		return maxSum;				
 	}
 	
 	public static void main(String args[]) 

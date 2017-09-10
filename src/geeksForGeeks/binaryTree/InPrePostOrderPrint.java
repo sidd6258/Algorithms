@@ -61,9 +61,7 @@ public class InPrePostOrderPrint {
 	    	if(node.right != null){
 	    		System.out.print(node.right.key+" ");	    		
 	    	}
-	    	if(node.left != null)
 	    	printLevelOrder(node.left);
-	    	if(node.right != null)
 	    	printLevelOrder(node.right);
 	    	
 	    }

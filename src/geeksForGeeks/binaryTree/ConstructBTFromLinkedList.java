@@ -8,23 +8,23 @@ public class ConstructBTFromLinkedList {
 		Node root;
 		static int index=0;
 		Node construct(Node node,LinkedList<Node> list){
-			if(node==null) {
+			if(node==null){
 				node=list.poll();
 			}
-			Queue<Node> q= new LinkedList<Node>();
+			Queue<Node> q=new LinkedList<Node>();
 			q.add(node);
-			while(!q.isEmpty()) {
+			while(!q.isEmpty()){
 				int count=q.size();
-				while(count-->0) {
+				while(count-->0){
+					Node temp=q.poll();
 					if(!list.isEmpty()){
-						q.peek().left=list.poll();
-						q.add(q.peek().left);
+						temp.left=list.poll();
+						q.add(temp.left);
 					}
 					if(!list.isEmpty()){
-						q.peek().right=list.poll();
-						q.add(q.peek().right);
+						temp.right=list.poll();
+						q.add(temp.right);
 					}
-					q.poll();
 				}
 			}
 			return node;

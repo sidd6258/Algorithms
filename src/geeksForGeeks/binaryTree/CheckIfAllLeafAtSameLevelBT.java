@@ -14,7 +14,7 @@ public class CheckIfAllLeafAtSameLevelBT {
 			}
 			return (firstLeafLevel==level);			
 		}
-		return check(node.left,level+1,firstLeafLevel) && check(node.left,level+1,firstLeafLevel);
+		return check(node.left,level+1,firstLeafLevel) && check(node.right,level+1,firstLeafLevel);
 		
 	}
 	boolean check(Node node){

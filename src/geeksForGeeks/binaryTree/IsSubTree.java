@@ -9,10 +9,8 @@ public class IsSubTree {
 	    boolean areIdentical(Node root1, Node root2) 
 	    {
 	    	if(root1 == null && root2 == null) return true;
-	    	if(root1 == null || root2 == null) return false;
-	    	
-	    	return (root1.key == root2.key && areIdentical(root1.left, root2.left) && areIdentical(root1.right, root2.right));
-
+	    	if(root1.key == root2.key && areIdentical(root1.left, root2.left) && areIdentical(root1.right, root2.right)) return true;	    	
+	    	return false;
 	    }
 	  
 	    /* This function returns true if S is a subtree of T, otherwise false */
