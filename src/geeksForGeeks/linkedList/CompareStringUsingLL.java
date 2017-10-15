@@ -17,7 +17,7 @@ public class CompareStringUsingLL {
         }
     }
  
-    int compare(Node node1, Node node2) {
+    int compareIter(Node node1, Node node2) {
  
         if (node1 == null && node2 == null) {
             return 1;
@@ -41,6 +41,15 @@ public class CompareStringUsingLL {
         }
         return 0;
     }
+    
+    static boolean compareRec(Node a,Node b)
+    {
+    	if(a==null && b==null) return true;
+    	if(a!=null && b!=null){
+    		return (a.data==b.data) && compareRec(a.next,b.next);
+    	}
+    	return false;
+    }
  
     public static void main(String[] args) {
  
@@ -62,8 +71,9 @@ public class CompareStringUsingLL {
         list.b.next.next.next.next.next = new Node('a');
  
         int value;
-        value = list.compare(a, b);
+        value = list.compareIter(a, b);
         System.out.println(value);
+        System.out.println(compareRec(a, b));
  
     }
 }

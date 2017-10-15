@@ -10,17 +10,16 @@ public class DeleteGivenKeyLL {
         Node temp = head, prev = null;
  
         // If head node itself holds the key to be deleted
-        if (temp != null && temp.data == key)
+        if (head.data==key)
         {
-            head = temp.next; // Changed head
+            head = head.next; // Changed head
             return;
         }
  
         // Search for the key to be deleted, keep track of the
         // previous node as we need to change temp.next
-        while (temp != null && temp.data != key)
+        while (temp.next != null && temp.next.data != key)
         {
-            prev = temp;
             temp = temp.next;
         }    
  
@@ -28,7 +27,7 @@ public class DeleteGivenKeyLL {
         if (temp == null) return;
  
         // Unlink the node from linked list
-        prev.next = temp.next;
+        temp.next = temp.next.next;
     }
  
     /* Inserts a new Node at front of the list. */
@@ -66,7 +65,7 @@ public class DeleteGivenKeyLL {
         System.out.println("\nCreated Linked list is:");
         llist.printList();
  
-        llist.deleteNode(1); // Delete node at position 4
+        llist.deleteNode(3); // Delete node at position 4
  
         System.out.println("\nLinked List after Deletion at position 4:");
         llist.printList();

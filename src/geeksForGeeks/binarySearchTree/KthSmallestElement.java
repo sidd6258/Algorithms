@@ -10,7 +10,7 @@ public class KthSmallestElement {
 	    // Constructor
 	    KthSmallestElement() { 
 	        root = null;
-	        key1=1;
+	        key1=0;
 	    }
 	 
 	    // This method mainly calls insertRec()
@@ -42,12 +42,11 @@ public class KthSmallestElement {
 	    void printKthSmallest(Node root,int key) {
 	        if (root != null) {
 	        	printKthSmallest(root.left,key);
+	        	key1++;
 	            if(key==key1){
 	            System.out.println(root.key);
-	            key1+=1;}
-	            else{
-	            	key1+=1;
 	            }
+	            
 	            printKthSmallest(root.right,key);
 	        }
 	    }
