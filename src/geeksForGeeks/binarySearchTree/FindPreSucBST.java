@@ -36,11 +36,11 @@ public class FindPreSucBST {
 	boolean isBST(Node root){
 		if(root==null) return true;
 		if(root.left!=null){
-		if(root.left.key>root.key || isBST(root.left)){
+		if(root.left.key>root.key || !isBST(root.left)){
 			return false;
 		}}
 		if(root.right!=null){
-		if(root.right.key<root.key || isBST(root.right)){
+		if(root.right.key<root.key || !isBST(root.right)){
 			return false;
 		}}
 		return true;

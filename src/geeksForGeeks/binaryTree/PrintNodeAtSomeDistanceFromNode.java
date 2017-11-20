@@ -12,12 +12,8 @@ public class PrintNodeAtSomeDistanceFromNode {
 	    		return;
 	    	}
 	    	else {
-	    	if(node.left != null){
 	    		printKDistant(node.left,k-1);
-	    	}
-	    	if(node.right != null){
 	    		printKDistant(node.right,k-1);
-	    	}
 	    	}
 	    }
 	     

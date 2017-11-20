@@ -10,15 +10,15 @@ public class PrintBSTInGivenRange {
 	    void Print(Node node, int k1, int k2) {
 	         if(node==null) return;
 	         
-	         if(k1<node.key){
+//	         if(k1<node.key){
 	        	 Print(node.left,k1,k2);
-	         }
+//	         }
 	         if(k1<=node.key && k2>=node.key){
 	        	 System.out.print(node.key+" ");
 	         }
-	         if(k2>node.key){
+//	         if(k2>node.key){
 	        	 Print(node.right,k1,k2);
-	         }
+//	         }
 	    }
 	     
 	 
