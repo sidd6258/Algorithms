@@ -8,10 +8,8 @@ public class CheckHeightBalanced {
 		if(node == null){
 			return 0;
 		}
-		int lHeight=0;
-		int rHeight=0;
-		lHeight = height(node.left);
-		rHeight = height(node.right);
+		int lHeight = height(node.left);
+		int rHeight = height(node.right);
 		
 		System.out.println(lHeight);
 		System.out.println(rHeight);
@@ -26,10 +24,8 @@ public class CheckHeightBalanced {
 		if(node == null){
 			return 0;
 		}
-		int lHeight=0;
-		int rHeight=0;
-		lHeight = height(node.left)+1;
-		rHeight = height(node.right)+1;
+		int lHeight = height(node.left)+1;
+		int rHeight = height(node.right)+1;
 		
 		if(lHeight > rHeight){
 			return lHeight;

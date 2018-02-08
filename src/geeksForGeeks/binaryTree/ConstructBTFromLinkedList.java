@@ -6,7 +6,7 @@ import java.util.Queue;
 public class ConstructBTFromLinkedList {
 
 		Node root;
-		static int index=0;
+		
 		Node construct(Node node,LinkedList<Node> list){
 			if(node==null){
 				node=list.poll();

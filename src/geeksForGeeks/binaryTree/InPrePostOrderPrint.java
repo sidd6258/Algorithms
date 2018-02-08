@@ -8,10 +8,7 @@ public class InPrePostOrderPrint {
 	    // Root of Binary Tree
 	    Node root;
 	 
-	    InPrePostOrderPrint()
-	    {
-	        root = null;
-	    }
+
 	 
 	    /* Given a binary tree, print its nodes according to the
 	      "bottom-up" postorder traversal. */
@@ -45,25 +42,6 @@ public class InPrePostOrderPrint {
 	    	System.out.print(node.key+" ");
 	    	printPreorder(node.left);
 	    	printPreorder(node.right);
-	    }
-	    
-	    void printLevelOrder(Node node)
-	    {
-	    	if(node == null){
-	    		return;
-	    	}
-	    	if(node == root)
-	    	System.out.print(node.key+" ");
-	    	    	
-	    	if(node.left != null){
-	    		System.out.print(node.left.key+" ");	    		
-	    	}	    	
-	    	if(node.right != null){
-	    		System.out.print(node.right.key+" ");	    		
-	    	}
-	    	printLevelOrder(node.left);
-	    	printLevelOrder(node.right);
-	    	
 	    }
 	    
 	    void printLevelOrder() 
@@ -101,6 +79,17 @@ public class InPrePostOrderPrint {
 	        tree.root.right = new Node(3);
 	        tree.root.left.left = new Node(4);
 	        tree.root.left.right = new Node(5);
+	        tree.root.left.left.left = new Node(6);
+	        tree.root.left.left.right = new Node(7);
+	        tree.root.left.left.left.left = new Node(8);
+	        tree.root.left.left.left.right = new Node(9);
+	        tree.root.right.left = new Node(10);
+	        tree.root.right.left.left = new Node(12);
+	        tree.root.right.left.right = new Node(13);
+	        tree.root.right.right = new Node(11);
+	        tree.root.right.right.left = new Node(14);
+	        tree.root.right.right.right = new Node(15);
+	   	 
 	 
 	        System.out.println("Preorder traversal of binary tree is ");
 	        tree.printPreorder(tree.root);
@@ -111,8 +100,6 @@ public class InPrePostOrderPrint {
 	        System.out.println("\nPostorder traversal of binary tree is ");
 	        tree.printPostorder(tree.root);
 	        
-	        System.out.println("\nLevelorder traversal of binary tree is ");
-	        tree.printLevelOrder(tree.root);
 	        
 	        System.out.println("\nLevelorder traversal using queue of binary tree is ");
 	        tree.printLevelOrder();
