@@ -2,18 +2,13 @@ package geeksForGeeks.binarySearchTree;
 
 public class IsBST {
 	Node root;
-	boolean isBST(Node root){
-		if(root==null) return true;
-		if(root.left!=null){
-		if(root.left.key>root.key || !isBST(root.left)){
-			return false;
-		}}
-		if(root.right!=null){
-		if(root.right.key<root.key || !isBST(root.right)){
-			return false;
-		}}
-		return true;
-	}
+   boolean isBST(Node node, int min, int max)
+   {
+       if (node == null) return true;
+       if (node.key < min || node.key > max) return false;
+       return (isBST(node.left, min, node.key-1) && isBST(node.right, node.key+1, max));
+   }
+   
 	public static void main(String args[])
     {
 		IsBST tree = new IsBST();
@@ -23,7 +18,7 @@ public class IsBST {
         tree.root.left.left = new Node(1);
         tree.root.left.right = new Node(3);
  
-        if (tree.isBST(tree.root))
+        if (tree.isBST(tree.root,Integer.MIN_VALUE,Integer.MAX_VALUE))
             System.out.println("IS BST");
         else
             System.out.println("Not a BST");

@@ -33,17 +33,10 @@ public class FindPreSucBST {
 		}
 	}
 	
-	boolean isBST(Node root){
-		if(root==null) return true;
-		if(root.left!=null){
-		if(root.left.key>root.key || !isBST(root.left)){
-			return false;
-		}}
-		if(root.right!=null){
-		if(root.right.key<root.key || !isBST(root.right)){
-			return false;
-		}}
-		return true;
+	boolean isBST(Node node, int min, int max){
+		if(node==null) return true;
+		if(node.key < min || node.key > max ) return false;
+		return (isBST(node.left,min,node.key-1) && isBST(node.right,node.key+1,max)) ;
 	}
 	Node insert(Node node, int data) {
         
@@ -76,7 +69,7 @@ public class FindPreSucBST {
 	        tree.insert(root, 5);
 	        findPreSuc(root,4);
 	        System.out.println(pre.key+" "+suc.key);
-	        if (tree.isBST(root))
+	        if (tree.isBST(root,Integer.MIN_VALUE,Integer.MAX_VALUE))
 	            System.out.println("IS BST");
 	        else
 	            System.out.println("Not a BST");
