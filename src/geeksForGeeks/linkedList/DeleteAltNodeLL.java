@@ -56,6 +56,7 @@ public class DeleteAltNodeLL {
     	DeleteAltNodeLL llist = new DeleteAltNodeLL();
          
         /* Constructed Linked List is 1->2->3->4->5->null */
+    	llist.push(6);
         llist.push(5);
         llist.push(4);
         llist.push(3);

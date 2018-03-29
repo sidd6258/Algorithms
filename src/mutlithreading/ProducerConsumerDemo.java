@@ -17,7 +17,7 @@ class Q{
 			}
 		}
 		this.i=i;
-		System.out.println("Put i "+this.i);
+		System.out.println(Thread.currentThread().getName()+" "+this.i);
 		elementSet=true;
 		notify();
 	}
@@ -30,7 +30,7 @@ class Q{
 				e.printStackTrace();
 			}
 		}
-		System.out.println("Get i "+this.i);
+		System.out.println(Thread.currentThread().getName()+" "+this.i);
 		elementSet=false;
 		notify();
 	}
@@ -38,7 +38,6 @@ class Q{
 
 class Producer implements Runnable{
 	Q q;
-	static boolean elmentSet=false;
 
 	public Producer(Q q) {		
 		this.q = q;	

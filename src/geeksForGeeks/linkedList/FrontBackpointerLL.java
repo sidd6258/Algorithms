@@ -2,7 +2,7 @@ package geeksForGeeks.linkedList;
 
 import java.util.Stack;
 
-public class FromtBackpointerLL {
+public class FrontBackpointerLL {
 		Node head;  // head of list
 		 
 	 
@@ -21,10 +21,9 @@ public class FromtBackpointerLL {
 	    	current=head;
 	    	Node slow=current;
 	    	Node fast=current;
-	    	while(fast.next.next!=null){
-	    		slow=current.next;
-	    		fast=current.next.next;
-	    		current=current.next;
+	    	while(fast.next!=null){
+	    		slow=slow.next;
+	    		fast=fast.next.next;
 	    	}
 	    	current=head;
 	    	while(current.data!=slow.data){
@@ -34,7 +33,6 @@ public class FromtBackpointerLL {
 	    		current=oldnext;
 	    	}
 	    	current.next=null;
-	    	printList();	    	
 	    }
 	 
 	    /*  Given a reference (pointer to pointer) to the head
@@ -67,7 +65,7 @@ public class FromtBackpointerLL {
 	    /* Drier program to test above functions */
 	    public static void main(String args[])
 	    {
-	    	FromtBackpointerLL llist = new FromtBackpointerLL();
+	    	FrontBackpointerLL llist = new FrontBackpointerLL();
 	 
 	        // create a list 10->20->30->40->50->60
 	        for (int i = 50; i >= 10; i -= 10)
